@@ -16,7 +16,13 @@ AngelConfigurer configureServer(FileSystem fileSystem) {
 
     // Render `views/hello.jl` when a user visits the application root.
     app.get('/', (req, res) => res.render('hello'));
-
+    app.get('/big-process', (req, res) {
+        for (var i = 0; i < 50000000000; i++) {
+            var a = i;
+        }
+        return res.json({'message': "Big process done!"});
+    });
+    app.get('/small-process', (req, res) => res.json({'message': "Server up and running!"}));
     // Mount static server at web in development.
     // The `CachingVirtualDirectory` variant of `VirtualDirectory` also sends `Cache-Control` headers.
     //
