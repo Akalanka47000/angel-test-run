@@ -1,0 +1,3 @@
+# Production-only server configuration
+debug: false
+jwt_secret: "UFTnvI9vlwBqCTk3NuYZCW4TjlRvn1cO"
